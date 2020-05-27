@@ -1,7 +1,7 @@
 # Trabalho final da materia de Desenvolvimento Mobile - BackEnd em node
 
 ### Como instalar: 
-- Import o arquivo `Event.sql` para o banco de dados local (XAMPP);
+- Import o arquivo `Dialitico.sql` para o banco de dados local (XAMPP);
 - Tenha o node instalado en sua maquina;
 - Clone o projeto em sua maquina;
 - Abra o local do projeto no terminal;
