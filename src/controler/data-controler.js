@@ -52,7 +52,7 @@ exports.get = (req, res, next) => {
 exports.getById = (req, res, next) => {
     model.find(req.params.idDados).then(function (x) {
         res.status(201).send({
-            message: 'Usuario encontrado com suscesso',
+            message: 'Usuario encontrado com ',
             data: x
         });
     }).catch((err) => setImmediate(() => {
@@ -84,6 +84,34 @@ exports.delete = (req, res, next) => {
     }).catch((err) => setImmediate(() => {
         res.status(400).send({
             message: 'Falha ao deletar usuarios!',
+            data: err
+        })
+    }));
+};
+exports.putLiquido = (req, res, next) => {
+    model.updateLiquido(req.body).then(function (x) {
+        res.status(201).send({
+            message: 'Dados alterado com suscesso',
+            data: x
+        });
+    }).catch((err) => setImmediate(() => {
+        res.status(400).send({
+            message: 'Falha ao listar Dados!',
+            data: err
+        })
+    }));
+};
+
+exports.getByDate = (req, res, next) => {
+    console.log("TEste"+req.params.Data);
+    model.findByDate(req.body.idUsuario,req.params.Data).then(function (x) {
+        res.status(201).send({
+            message: 'Usuario encontrado pela data com suscesso',
+            data: x
+        });
+    }).catch((err) => setImmediate(() => {
+        res.status(400).send({
+            message: 'Falha ao listar usuarios!',
             data: err
         })
     }));
