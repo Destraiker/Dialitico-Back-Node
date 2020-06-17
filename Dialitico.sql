@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Maio-2020 às 03:01
+-- Generation Time: 16-Jun-2020 às 15:56
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -49,7 +49,13 @@ INSERT INTO `dados` (`idDados`, `Usuario_idUsuario`, `Dreneagem_inicial`, `Drene
 (3, 11, 123, 123, 123, '2020-05-26'),
 (4, 11, 435, 345, 345, '2020-05-25'),
 (5, 11, 654, 34545, 345212, '2020-05-24'),
-(6, 11, 234, 44, 123, '2020-05-23');
+(6, 11, 234, 44, 123, '2020-05-23'),
+(7, 16, 150, 200, 500, '2020-06-16'),
+(8, 16, 231, 422, 245, '2020-06-11'),
+(9, 16, 314, 34, 2143, '2020-06-12'),
+(10, 16, 324, 124, 1217, '2020-06-14'),
+(11, 16, 123, 412, 147, '2020-06-15'),
+(12, 16, 143, 222, 254, '2020-06-13');
 
 -- --------------------------------------------------------
 
@@ -77,7 +83,8 @@ INSERT INTO `medico` (`idMedico`, `Nome`, `Crm`, `Login`, `Senha`) VALUES
 (6, 'João', '65965844', 'teste', '9bea29064125894f91274abb1527d868'),
 (7, 'Brener', '4294967295', 'TESTE', '9bea29064125894f91274abb1527d868'),
 (8, 'Brener Eduardo Rodrigues', 'teste', 't', '9bea29064125894f91274abb1527d868'),
-(9, 'Festa', 'assa', 'te', '9bea29064125894f91274abb1527d868');
+(9, 'Festa', 'assa', 'te', '9bea29064125894f91274abb1527d868'),
+(10, 'Dirceu Rodrigues de Almeida', '65985988454', 'Login', '9bea29064125894f91274abb1527d868');
 
 -- --------------------------------------------------------
 
@@ -89,7 +96,7 @@ CREATE TABLE `usuario` (
   `idUsuario` int(10) UNSIGNED NOT NULL,
   `Medico_idMedico` int(10) UNSIGNED NOT NULL,
   `Nome` varchar(100) NOT NULL,
-  `CPF` int(10) UNSIGNED NOT NULL,
+  `CPF` varchar(11) NOT NULL,
   `Senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -98,15 +105,20 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `Medico_idMedico`, `Nome`, `CPF`, `Senha`) VALUES
-(2, 2, 'Brener Eduardo Rodrigues', 4294967295, '$2y$10$g48g.BX5miyxvnFMC5FNLutV1NDIOohTQ4yISQqek4EQa0MJSZLqy'),
-(5, 2, 'Brener', 4294967295, '$2y$10$avPATNA6GEojDUTH7/LwH.JBIiqNFDB7So37/4hwwlwOQwBFVMyQK'),
-(6, 2, 'João', 4294967295, '$2y$10$KXFrkbF2ZaHV6mbzfXmeIewmEt5c5OegNmNJPnuiKf8UIDjDNHe0W'),
-(7, 2, 'João', 4294967295, '$2y$10$vrinlEUwfiLZWbFyeY3PteFzcsMkz8Rl/BWi9H4cuslJG8ZSgvkCK'),
-(8, 2, 'João', 4294967295, '$2y$10$.pjdLYo3Cnzw5yjZjBONPuCfpf5R9sT0B0DJZWvJVcVVKa03pfO3K'),
-(9, 2, 'João', 545454, '$2y$10$Bz3L1JBnOMiZ40ptB21zyO.rrpd6Z6xDSEkn/QVAuK/mzpziR8/2W'),
-(10, 6, 'Brener', 4294967295, '9bea29064125894f91274abb1527d868'),
-(11, 9, 'Otavi', 123456, '0b941b9120372867a292bf02e3ae3450'),
-(12, 9, 'Ramon', 654321, '9bea29064125894f91274abb1527d868');
+(2, 2, 'Brener Eduardo Rodrigues', '2147483647', '$2y$10$g48g.BX5miyxvnFMC5FNLutV1NDIOohTQ4yISQqek4EQa0MJSZLqy'),
+(5, 2, 'Brener', '2147483647', '$2y$10$avPATNA6GEojDUTH7/LwH.JBIiqNFDB7So37/4hwwlwOQwBFVMyQK'),
+(6, 2, 'João', '2147483647', '$2y$10$KXFrkbF2ZaHV6mbzfXmeIewmEt5c5OegNmNJPnuiKf8UIDjDNHe0W'),
+(7, 2, 'João', '2147483647', '$2y$10$vrinlEUwfiLZWbFyeY3PteFzcsMkz8Rl/BWi9H4cuslJG8ZSgvkCK'),
+(8, 2, 'João', '2147483647', '$2y$10$.pjdLYo3Cnzw5yjZjBONPuCfpf5R9sT0B0DJZWvJVcVVKa03pfO3K'),
+(9, 2, 'João', '545454', '$2y$10$Bz3L1JBnOMiZ40ptB21zyO.rrpd6Z6xDSEkn/QVAuK/mzpziR8/2W'),
+(10, 6, 'Brener', '2147483647', '9bea29064125894f91274abb1527d868'),
+(11, 9, 'Otavi', '123456', '0b941b9120372867a292bf02e3ae3450'),
+(12, 9, 'Ramon', '99999999999', '9bea29064125894f91274abb1527d868'),
+(16, 10, 'Brener Eduardo Rodrigues', '14213463621', '9bea29064125894f91274abb1527d868'),
+(17, 10, 'Diego Ricardo Julio da Cruz', '98903030354', '9fd860d512c2fe969227f7b9687eb76d'),
+(18, 10, 'Luciana Beatriz da Silva', '39257564851', '9fd860d512c2fe969227f7b9687eb76d'),
+(19, 10, 'Alícia Sandra da Mata', '16015682906', '9fd860d512c2fe969227f7b9687eb76d'),
+(20, 10, 'Malu Luiza Laís Martins', '37462136813', '9fd860d512c2fe969227f7b9687eb76d');
 
 --
 -- Indexes for dumped tables
@@ -140,19 +152,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `dados`
 --
 ALTER TABLE `dados`
-  MODIFY `idDados` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idDados` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `idMedico` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idMedico` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
